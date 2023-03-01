@@ -1,0 +1,27 @@
+<!-- <ul>
+  <li *ngFor="let item of data[0] | keyvalue">
+    Key:{{item.key}} - value:{{item.value}}
+  </li>
+</ul> -->
+
+<table [classList]="tableClass">
+  <thead class="">
+    <tr>
+      <ng-content select="th"></ng-content>
+    </tr>
+  </thead>
+  <tbody class="">
+    <tr *ngFor="let item of Data">
+
+      <ng-container *ngFor="let key of Keys">
+        <td>{{ item[key] }}</td>
+      </ng-container>
+
+      <td *ngIf="actions != ''">
+        <button *ngIf="actions.includes('edit')" class="btn btn-warning btn-md mx-1" (click)="triggerEdit(item)">edit</button>
+        <button *ngIf="actions.includes('remove')" class="btn btn-danger btn-md mx-1" (click)="triggerRemove(item)">x</button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>

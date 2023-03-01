@@ -1,0 +1,17 @@
+<!-- <router-outlet></router-outlet> -->
+<div class="container mt-5">
+    
+    <h2>Product</h2>
+    <!-- <app-listof [data]="prodList"></app-listof> -->
+    
+    <app-listof [data]="prodList" action="edit,remove" (edit)="handleEditEvent($event)" (remove)="handleRemoveEvent($event)">
+        <th tableHeader="id" class="col-1">Id Prod</th>
+        <th tableHeader="titre" class="col-4">Title</th>
+        <th tableHeader="description" class="col-*">Description</th>
+        <th tableHeader="price" class="col-1">Price</th>
+        <th>Actions</th>
+    </app-listof>
+    <app-addproduct></app-addproduct>    
+ 
+
+

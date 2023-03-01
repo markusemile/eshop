@@ -1,0 +1,19 @@
+<form [formGroup]="form">
+    <div [class]="iClass">
+        <div *ngFor="let item of ControlKeys">{{ item |json }}</div>
+        <div class="form-group" *ngFor="let item of ControlKeys">
+            <!-- {{ item |json }} -->
+            <app-text
+                type="text"
+                name="title" 
+                [formControlName]="item.name"
+            ></app-text>
+            <app-text
+                type="text"
+                name="title" 
+                formControlName="title"
+            ></app-text>
+            <!-- <app-dropdown *ngIf="item.type=='dropdown' "  data={{item}}></app-dropdown>  -->
+        </div>
+    </div>
+</form>
